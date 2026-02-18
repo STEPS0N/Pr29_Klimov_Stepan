@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\man.png" />
+    <None Remove="Images\pc.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -18,9 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Images\" />
-    <Folder Include="Pages\Clubs\Elements\" />
     <Folder Include="Pages\Users\Elements\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\man.png" />
+    <Resource Include="Images\pc.png" />
   </ItemGroup>
 
 </Project>
