@@ -1,4 +1,5 @@
-﻿using KlimovPR29.Models;
+﻿using KlimovPR29.Classes;
+using KlimovPR29.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +22,12 @@ namespace KlimovPR29.Pages.Clubs.Elements
     /// </summary>
     public partial class Item : UserControl
     {
-        Main Main;
+        Main MainClub;
+        Users.Main MainUser;
         Models.Clubs Club;
+        public UserContext AllUser = new UserContext();
 
-        public Item(Models.Clubs Club, Main Main)
+        public Item(Models.Clubs Club, Main MainClub)
         {
             InitializeComponent();
 
@@ -32,20 +35,37 @@ namespace KlimovPR29.Pages.Clubs.Elements
             this.Addres.Text = Club.Addres;
             this.WorkTime.Text = Club.WorkTime;
 
-            this.Main = Main;
-            this. Club = Club;
+            this.MainClub = MainClub;
+            this.Club = Club;
+            this.MainUser = new Pages.Users.Main();
         }
 
         private void EditClub(object sender, RoutedEventArgs e)
         {
-            MainWindow.init.OpenPage(new Pages.Clubs.Add(this.Main, this.Club));
+            MainWindow.init.OpenPage(new Pages.Clubs.Add(this.MainClub, this.Club));
         }
 
         private void DeleteClub(object sender, RoutedEventArgs e)
         {
-            Main.AllClub.Remove(Club);
-            Main.AllClub.SaveChanges();
-            Main.parent.Children.Remove(this);
+            try
+            {
+                var rents = MainUser.AllUsers.Users.Where(x => x.IdClub == this.Club.Id).ToList();
+
+                if (rents.Any())
+                {
+                    MainUser.AllUsers.RemoveRange(rents);
+                    MainUser.AllUsers.SaveChanges();
+                }
+
+                MainClub.AllClub.Remove(Club);
+                MainClub.AllClub.SaveChanges();
+
+                MainClub.parent.Children.Remove(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при удалении: {ex.Message}", "Ошибка");
+            }
         }
     }
 }

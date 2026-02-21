@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:KlimovPR29.Pages.Users"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="1100"
       Title="Main">
 
     <Grid>
@@ -24,6 +24,65 @@
                 Background="#FF46FD00"
                 BorderBrush="#FF46FD00"
                 Foreground="White"/>
+            <Button Click="FilterClear"
+                    Height="25"
+                    Content="Очистить"
+                    VerticalAlignment="Bottom"
+                    Margin="10"
+                    HorizontalAlignment="Left"
+                    Width="100"
+                    Background="Red"
+                    BorderBrush="Red"
+                    Foreground="White"/>
+            <Label Content="ФИО:"
+                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Left"
+                   Margin="120,10,10,10"/>
+            <TextBox VerticalAlignment="Bottom"
+                     HorizontalAlignment="Left"
+                     TextWrapping="Wrap"
+                     VerticalContentAlignment="Center"
+                     Margin="162,0,0,10"
+                     Width="153"
+                     Height="25"
+                     x:Name="filterFIO"
+                     TextChanged="FilterFIO"/>
+            <Label Content="Клуб:"
+                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Left"
+                   Margin="325,10,10,10"/>
+            <ComboBox VerticalAlignment="Bottom"
+                     HorizontalAlignment="Left"
+                     VerticalContentAlignment="Center"
+                     Margin="364,0,0,10"
+                     Width="153"
+                     Height="25"
+                     x:Name="filterClub"
+                     SelectionChanged="FilterClub"/>
+            <Label Content="Дата:"
+                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Left"
+                   Margin="525,10,10,10"/>
+            <DatePicker VerticalAlignment="Bottom"
+                      HorizontalAlignment="Left"
+                      VerticalContentAlignment="Center"
+                      Margin="563,0,0,10"
+                      Width="153"
+                      Height="25"
+                      x:Name="filterDate"
+                      SelectedDateChanged="FilterDate"/>
+            <Label Content="Часы:"
+                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Left"
+                   Margin="725,10,10,10"/>
+            <TextBox VerticalAlignment="Bottom"
+                     HorizontalAlignment="Left"
+                     VerticalContentAlignment="Center"
+                     Margin="764,0,0,10"
+                     Width="153"
+                     Height="25"
+                     x:Name="filterDuration"
+                     TextChanged="FilterDuration"/>
         </Grid>
     </Grid>
 </Page>

@@ -36,5 +36,37 @@ namespace KlimovPR29.Pages.Clubs
         {
             MainWindow.init.OpenPage(new Pages.Clubs.Add(this));
         }
+
+        private void FilterClear(object sender, RoutedEventArgs e)
+        {
+            filter.Clear();
+        }
+
+        private void Filter(object sender, TextChangedEventArgs e)
+        {
+            var text = filter.Text.Trim().ToLower();
+
+            if (filter.Text == null)
+            {
+                parent.Children.Clear();
+                foreach (Models.Clubs Club in AllClub.Clubs)
+                {
+                    parent.Children.Add(new Elements.Item(Club, this));
+                }
+                return;
+            }
+
+            var filtered = AllClub.Clubs.Where(x =>
+            (x.Name.ToLower().Contains(text)) ||
+            (x.Addres.ToLower().Contains(text)) ||
+            (x.WorkTime.ToLower().Contains(text)));
+
+            parent.Children.Clear();
+
+            foreach (var club in filtered)
+            {
+                parent.Children.Add(new Elements.Item(club, this));
+            }
+        }
     }
 }

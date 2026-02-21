@@ -22,7 +22,7 @@ namespace KlimovPR29
             InitializeComponent();
             init = this;
 
-            OpenPage(new Pages.Clubs.Main());
+            OpenPage(new Pages.Users.Main());
         }
 
         public void OpenPage(Page Page)

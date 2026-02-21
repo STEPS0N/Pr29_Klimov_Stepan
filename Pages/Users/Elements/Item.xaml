@@ -18,16 +18,16 @@
             Background="Red" BorderBrush="Red" Foreground="White"/>
         <Grid Grid.Column="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="130"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Label Content="Дата аренды:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,10,0,0"/>
             <DatePicker x:Name="RentDate" VerticalAlignment="Top" Margin="10,36,10,0" Height="25"
-                 VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Stretch" Width="150"/>
+                 VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Stretch"/>
             <Label Content="Время аренды:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,66,0,0"/>
             <TextBox x:Name="RentTime" Text="Время аренды" VerticalAlignment="Top" Margin="10,92,10,0" Height="25"
                  VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Stretch"/>
@@ -36,7 +36,7 @@
                  VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Stretch" Grid.Column="1"/>
             <Label Content="Продолжительность:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Column="1"/>
             <TextBox x:Name="Duration" Text="Продолжительность аренды" VerticalAlignment="Top" Margin="10,36,10,0" Height="25"
-                 VerticalContentAlignment="Top" HorizontalAlignment="Stretch" Grid.Column="1" IsEnabled="False" Width="150"/>
+                 VerticalContentAlignment="Top" HorizontalAlignment="Stretch" Grid.Column="1" IsEnabled="False"/>
 
             <Label Content="ФИО:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1"/>
             <TextBox x:Name="FIO" VerticalAlignment="Top" Margin="10,025,10,10" Height="25" Grid.Row="1"

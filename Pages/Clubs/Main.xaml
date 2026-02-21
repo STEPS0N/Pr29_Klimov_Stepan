@@ -24,6 +24,29 @@
                     Background="#FF46FD00"
                     BorderBrush="#FF46FD00"
                     Foreground="White"/>
+            <Button Click="FilterClear"
+                    Height="25"
+                    Content="Очистить"
+                    VerticalAlignment="Bottom"
+                    Margin="10"
+                    HorizontalAlignment="Left"
+                    Width="100"
+                    Background="Red"
+                    BorderBrush="Red"
+                    Foreground="White"/>
+            <Label Content="Поиск:"
+                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Left"
+                   Margin="120,10,10,10"/>
+            <TextBox VerticalAlignment="Bottom"
+                     HorizontalAlignment="Left"
+                     Margin="170,0,0,10"
+                     TextWrapping="Wrap"
+                     VerticalContentAlignment="Center"
+                     Width="153"
+                     Height="25"
+                     x:Name="filter"
+                     TextChanged="Filter"/>
         </Grid>
     </Grid>
 </Page>
